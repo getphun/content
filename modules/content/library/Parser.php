@@ -96,6 +96,9 @@ class Parser {
     }
     
     static function parseContent(String $html){
+        $html = trim($html);
+        if(!$html)
+            return $html;
         $html = '<!DOCTYPE html><html><body>' . $html . '</body></html>';
         $doc  = \HTML5_Parser::parse($html);
         
