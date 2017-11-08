@@ -15,7 +15,8 @@ class Parser {
             'facebook-video'    => 'facebook_js_tag',
             'facebook-post'     => 'facebook_js_tag',
             'instagram'         => 'instagram_js_embed',
-            'twitter'           => 'twitter_js_embed',
+            'twitter-tweet'     => 'twitter_js_embed',
+            'twitter-video'     => 'twitter_js_embed',
             'googleplus'        => 'google_js_tag'
         ];
         
@@ -70,12 +71,16 @@ class Parser {
                 
                 if('blockquote' == $nodeName){
                     $cls = $el->getAttribute('class');
-                    if(false === strstr($cls, 'instagram-media') && false === strstr($cls, 'twitter-tweet'))
+                    if(false === strstr($cls, 'instagram-media') 
+                    && false === strstr($cls, 'twitter-tweet')
+                    && false === strstr($cls, 'twitter-video'))
                         continue;
+                
                 }elseif('div' == $nodeName){
                     $cls = $el->getAttribute('class');
                     if(false === strstr($cls, 'fb-video') && false === strstr($cls, 'fb-post'))
                         continue;
+                
                 }
                 
                 $elClone = $el->cloneNode(true);
