@@ -57,7 +57,7 @@ class Parser {
     static function _fixEmbed($doc){
         $replaces = [];
         
-        $elements = ['iframe', 'blockquote', 'video', 'div'];
+        $elements = ['blockquote', 'video', 'div', 'iframe'];
         foreach($elements as $tag){
             $els = $doc->getElementsByTagName($tag);
             if(!$els->length)
