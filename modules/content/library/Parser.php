@@ -14,7 +14,8 @@ class Parser {
         $components = [
             'facebook-video'    => 'facebook_js_tag',
             'facebook-post'     => 'facebook_js_tag',
-            'instagram'         => 'instagram_js_embed',
+            'instagram-post'    => 'instagram_js_embed',
+            'instagram-video'   => 'instagram_js_embed',
             'twitter'           => 'twitter_js_embed',
             'googleplus'        => 'google_js_tag'
         ];
